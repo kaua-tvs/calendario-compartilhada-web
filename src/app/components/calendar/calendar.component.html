@@ -45,7 +45,6 @@
         <button
           *ngIf="col && getHM(col) === '#EC7000'"
           class="simple-calendar-day btn"
-          [style.color]="getForeground(col)"
           (click)="selectDay(col)">
           <span>{{ col }}</span>
         </button>
