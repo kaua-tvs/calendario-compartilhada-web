@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="div-left col-md-6">
+    <div class="div-dad">
+      <div class="div-up">
+        <form [formGroup]="form" (ngSubmit)="montarDadosParaSalvar()">
+          <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+              <div class="row">
+                <div class="col-md-3">
+                  <label class="form-label">Titulo</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="titulo_compromisso"
+                  />
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Data</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    formControlName="data_compromisso"
+                  />
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Horario Inicio</label>
+                  <input
+                    type="time"
+                    class="form-control"
+                    formControlName="horario_inicio"
+                  />
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Horario Fim</label>
+                  <input
+                    type="time"
+                    class="form-control"
+                    formControlName="horario_fim"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-12 d-flex justify-content-end">
+              <button
+                type="button"
+                (click)="form.reset()"
+                class="btn btn-primary"
+              >
+                Limpar
+              </button>
+              <button type="submit" class="btn btn-light ml-10">Salvar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="div-right col-md-5 d-flex justify-content-end">
+    <app-calendar
+      [selectedDate]="selDate"
+      [heatmap]="heatmap"
+      [openPage]="selDate"
+      (change)="dateChanged($event)"
+      #simpleCalender
+      (monthChange)="monthChanged($event)"
+      [highlightToday]="highlightToday"
+      [ColorMap]="colorMap"
+      (submitDateOpenModal)="viewEventCalendar($event)"
+    >
+    </app-calendar>
+  </div>
+</div>
+
+<app-modal-table #modalTable [compromissos]='compromissos'></app-modal-table>

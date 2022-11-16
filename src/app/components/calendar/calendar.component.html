@@ -1,0 +1,90 @@
+<div class="divFirst">
+  <table class="simple-calendar" [style.backgroundColor]="getBackground()">
+    <!-- Header for changing month -->
+    <tr *ngIf="showHeader" class="">
+      <!-- Previous month button -->
+      <th>
+        <button
+          style="border: none; background-color: transparent; outline: none"
+          (click)="changeMonth(-1)"
+        >
+          <i class="bi bi-arrow-left-circle"></i>
+        </button>
+      </th>
+
+      <!-- Month label -->
+      <th colspan="5" class="heading text-center">
+        {{ getMonth(openPage.month) }} {{ openPage.year }}
+      </th>
+
+      <!-- Next month button -->
+      <th>
+        <button
+          style="border: none; background-color: transparent; outline: none"
+          (click)="changeMonth(1)"
+        >
+          <i class="bi bi-arrow-right-circle"></i>
+        </button>
+      </th>
+    </tr>
+
+    <!-- Weekday headers -->
+    <tr class="weekday">
+      <th class="text-center">Dom</th>
+      <th class="text-center">Seg</th>
+      <th class="text-center">Ter</th>
+      <th class="text-center">Qua</th>
+      <th class="text-center">Qui</th>
+      <th class="text-center">Sex</th>
+      <th class="text-center">Sab</th>
+    </tr>
+
+    <!-- The real calendar -->
+    <tr *ngFor="let row of calendar">
+      <td class="simple-calendar-cell text-center" *ngFor="let col of row">
+        <button
+          *ngIf="col && getHM(col) === '#EC7000'"
+          class="simple-calendar-day btn"
+          [style.color]="getForeground(col)"
+          (click)="selectDay(col)">
+          <span>{{ col }}</span>
+        </button>
+
+        <button
+          *ngIf="col && getHM(col) !== '#EC7000'"
+          class="simple-calendar-day btn btn-day"
+          [ngClass]="{
+            'brd-clr-orange': isToday(col),
+            'brd-sld': isToday(col)
+          }"
+          [style.backgroundColor]="getHM(col)"
+          [style.color]="getForeground(col)"
+          (click)="selectDay(col)">
+          <span [style.fontWeight]="isToday(col) ? 'bold' : null">{{
+            col
+          }}</span>
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- <div class="row infos mt-5">
+    <div class="col-4 col-md-4">
+      <label class="late">
+      </label>
+      <label class="ml-2">Em Atraso</label>
+    </div>
+  
+    <div class="col-4 col-md-4">
+      <label class="warning">
+      </label>
+      <label class="ml-2">Atenção</label>
+    </div>
+  
+    <div class="col-4 col-md-4">
+      <label class="on-time">
+      </label>
+      <label class="ml-2">No Prazo</label>
+    </div>
+  </div> -->
