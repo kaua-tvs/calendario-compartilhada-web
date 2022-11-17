@@ -8,19 +8,23 @@ import { ComponentsModule } from './components/components.module';
 import { HomeComponent } from './containers/home/home.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { AddMembersComponent } from './containers/add-members/add-members.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AddMembersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
     ComponentsModule,
-    ModalModule.forRoot() 
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
