@@ -8,14 +8,16 @@ import { ComponentsModule } from './components/components.module';
 import { HomeComponent } from './containers/home/home.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { AddMembersComponent } from './containers/add-members/add-members.component';
+import { AddMembersComponent } from './containers/members/add-members/add-members.component';
 import { CommonModule } from '@angular/common';
+import { DetailsMembersComponent } from './containers/members/details-members/details-members.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AddMembersComponent
+    AddMembersComponent,
+    DetailsMembersComponent,
   ],
   imports: [
     BrowserModule,

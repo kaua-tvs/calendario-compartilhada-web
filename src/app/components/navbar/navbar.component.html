@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bck-clr-header">
+  <div class="container-fluid">
+    <div class="icon crs-pnt"  (click)="navigateTo('home')">
+      <img
+        class="col-md-6"
+        src="https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_16_2x.png"
+        style="width: 40px; height: 40px"
+        srcset="
+          https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_16_2x.png 1x,
+          https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_16_2x.png 2x
+        "
+      />
+      <span class="col-md-6 clr-white fnt-wht-b">Agenda | </span>
+    </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link clr-white fnt-wht-b" aria-current="page" href="#" >Membros <i class="bi bi-people"></i> | </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  clr-white fnt-wht-b" (click)="navigateTo('add_member')">Adicionar <i class="bi bi-person-add"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
