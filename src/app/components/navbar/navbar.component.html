@@ -1,4 +1,4 @@
-<nav *ngIf="usserLogged" class="navbar navbar-expand-lg bck-clr-header">
+<nav *ngIf="usserLogged | async as isLoggedIn" class="navbar navbar-expand-lg bck-clr-header">
   <div class="container-fluid">
     <div class="icon crs-pnt"  (click)="navigateTo('home')">
       <img

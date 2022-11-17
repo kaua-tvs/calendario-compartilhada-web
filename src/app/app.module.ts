@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
 import { DetailsMembersComponent } from './containers/members/details-members/details-members.component';
 import { LoginComponent } from './containers/login/login.component';
 import { AddMembersComponent } from './containers/members/add-members/add-members.component';
+import { AuthGuard } from './inteceptors/auth/auth.guard';
+import { AuthService } from './inteceptors/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { AddMembersComponent } from './containers/members/add-members/add-member
     ComponentsModule,
     ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
