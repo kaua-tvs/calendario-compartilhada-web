@@ -8,9 +8,10 @@ import { ComponentsModule } from './components/components.module';
 import { HomeComponent } from './containers/home/home.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { AddMembersComponent } from './containers/members/add-members/add-members.component';
 import { CommonModule } from '@angular/common';
 import { DetailsMembersComponent } from './containers/members/details-members/details-members.component';
+import { LoginComponent } from './containers/login/login.component';
+import { AddMembersComponent } from './containers/members/add-members/add-members.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DetailsMembersComponent } from './containers/members/details-members/de
     HomeComponent,
     AddMembersComponent,
     DetailsMembersComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

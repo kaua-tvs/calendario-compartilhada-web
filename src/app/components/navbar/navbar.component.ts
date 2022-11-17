@@ -10,12 +10,15 @@ export class NavbarComponent implements OnInit {
 
   routers = [
       {id:'add_member', router: '/members/adicionar'},
-      {id: 'home', router: '/'}
-  ]
+      {id: 'home', router: '/home'}
+  ];
+
+  usserLogged = false;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.usserLogged = (localStorage.getItem('userLogged') === "");
   }
 
   navigateTo(router: string) {

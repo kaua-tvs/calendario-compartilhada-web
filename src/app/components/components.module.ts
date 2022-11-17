@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { CardComponent } from "./card/card.component";
 import { CalendarComponent } from './calendar/calendar.component';
 import { ModalTableComponent } from './modal-table/modal-table.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from "./navbar/navbar.component";
 
 @NgModule({
     declarations:[

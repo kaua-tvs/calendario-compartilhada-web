@@ -1,0 +1,43 @@
+<div class="col-md-12 d-flex justify-content-center mt-35 div-pai">
+  <div class="col-md-3">
+    <app-card>
+      <form [formGroup]="userForms" (ngSubmit)="submit()">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Email"
+                formControlName="email"
+              />
+              <label for="floatingInput clr-gray">Email</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Codigo"
+                formControlName="code"
+              />
+              <label for="floatingInput clr-gray">Codigo Agenda</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-success col-md-12">ACESSAR</button>
+            </div>
+        </div>
+      </form>
+    </app-card>
+  </div>
+</div>
