@@ -6,8 +6,8 @@
     "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "heroku-postbuild": "ng build --prod"
+    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
+    "test": "ng test"
   },
   "engines": {
     "node": "16.10.0",
